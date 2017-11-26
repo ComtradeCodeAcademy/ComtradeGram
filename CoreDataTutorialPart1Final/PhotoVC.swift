@@ -25,7 +25,7 @@ class PhotoVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Photos Feed"
+//        self.title = "Photos Feed"
         view.backgroundColor = .white
         tableView.register(PhotoCell.self, forCellReuseIdentifier: cellID)
         updateTableContent()
