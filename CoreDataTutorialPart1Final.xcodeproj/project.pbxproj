@@ -18,6 +18,7 @@
 		7BD171551E6792420012FF66 /* Photo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD171531E6792420012FF66 /* Photo+CoreDataClass.swift */; };
 		7BD171561E6792420012FF66 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD171541E6792420012FF66 /* Photo+CoreDataProperties.swift */; };
 		7BD171581E679CE80012FF66 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD171571E679CE80012FF66 /* CoreDataStack.swift */; };
+		D1A29D341FCC980800D00DC8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A29D331FCC980700D00DC8 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		7BD171531E6792420012FF66 /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7BD171541E6792420012FF66 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7BD171571E679CE80012FF66 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D1A29D331FCC980700D00DC8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			children = (
 				7B09F2411E68C8F700C8774B /* APIService.swift */,
 				7BD171371E6782130012FF66 /* AppDelegate.swift */,
+				D1A29D331FCC980700D00DC8 /* LoginViewController.swift */,
 				7B4DA3561E6B9DB4008CFF8A /* Extensions.swift */,
 				7BD1714C1E6782500012FF66 /* Model */,
 				7BD1714D1E67825B0012FF66 /* View */,
@@ -138,7 +141,6 @@
 				TargetAttributes = {
 					7BD171331E6782130012FF66 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = ULU46F325W;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -178,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1A29D341FCC980800D00DC8 /* LoginViewController.swift in Sources */,
 				7BD171581E679CE80012FF66 /* CoreDataStack.swift in Sources */,
 				7B4DA3571E6B9DB4008CFF8A /* Extensions.swift in Sources */,
 				7BD171561E6792420012FF66 /* Photo+CoreDataProperties.swift in Sources */,
@@ -299,7 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ULU46F325W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CoreDataTutorialPart1Final/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.speedelo.CoreDataTutorialPart1Final;
@@ -312,7 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ULU46F325W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CoreDataTutorialPart1Final/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.speedelo.CoreDataTutorialPart1Final;
