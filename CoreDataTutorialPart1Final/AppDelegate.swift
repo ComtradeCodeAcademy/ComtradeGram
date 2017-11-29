@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate  {
 
     var window: UIWindow?
 
@@ -21,28 +21,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let photoVC = PhotoVC()
         let profileVC = ProfileViewController()
+        let loginVC = LoginViewController()
+        
 //        window?.rootViewController =
         CoreDataStack.sharedInstance.applicationDocumentsDirectory()
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [UINavigationController(rootViewController: photoVC), profileVC]
+        tabBarController.viewControllers = [UINavigationController(rootViewController: photoVC), profileVC, loginVC]
         
         let item1 = UITabBarItem(title: "Photos", image: nil, tag: 0)
         let item2 = UITabBarItem(title: "Search", image: nil, tag: 1)
         let item3 = UITabBarItem(title: "Add", image: nil, tag: 2)
         let item4 = UITabBarItem(title: "Friends", image: nil, tag: 3)
         let item5 = UITabBarItem(title: "Profile", image: nil, tag: 4)
+        let item6 = UITabBarItem(title: "Login", image: nil, tag: 5)
         
         tabBarController.tabBarItem = item1
         tabBarController.tabBarItem = item2
         tabBarController.tabBarItem = item3
         tabBarController.tabBarItem = item4
         tabBarController.tabBarItem = item5
+        tabBarController.tabBarItem = item6
         
         window?.rootViewController = tabBarController
         
+        
+        
         return true
     }
+        
+        
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
