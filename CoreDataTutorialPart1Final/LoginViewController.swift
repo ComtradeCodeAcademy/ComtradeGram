@@ -12,7 +12,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var label : UILabel!
     var label2 : UILabel!
-    var textField : UITextField!
+    var textField1 : UITextField!
     var textField2 : UITextField!
     var button : UIButton!
 
@@ -20,12 +20,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         
         let view = UIView()
+        self.title = "Login"
         view.backgroundColor = .orange
         
-        textField = UITextField()
-        textField.borderStyle = .roundedRect
-        textField.text = "Username"
-        view.addSubview(textField)
+        textField1 = UITextField()
+        textField1.borderStyle = .roundedRect
+        textField1.text = "Username"
+        view.addSubview(textField1)
+        textField1.delegate = self
         
         textField2 = UITextField()
         textField2.borderStyle = .roundedRect
@@ -33,6 +35,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         textField2.frame = CGRect.init(x: 15, y: 80, width: 343, height: 30)
         textField2.isSecureTextEntry = true
         view.addSubview(textField2)
+        textField2.delegate = self
+        textField2.returnKeyType = UIReturnKeyType.send
         
         button = UIButton.init(frame: CGRect.init(x: 130, y: 100, width: 100, height: 100))
         //button.frame = CGRect.init(x: 30, y: 100, width: 50, height: 30)
@@ -53,16 +57,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         self.view = view
         
-        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField1.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
         let margins = view.layoutMarginsGuide
         NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: margins.topAnchor, constant: 20),
-            textField.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
-            textField.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
+            textField1.topAnchor.constraint(equalTo: margins.topAnchor, constant: 20),
+            textField1.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
+            textField1.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
             
-            label.leadingAnchor.constraint(equalTo: textField.leadingAnchor),
-            label.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 10),
+            label.leadingAnchor.constraint(equalTo: textField1.leadingAnchor),
+            label.topAnchor.constraint(equalTo: textField1.bottomAnchor, constant: 10),
             ])
         
         // Events
@@ -73,13 +77,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func updateLabel() {
-        self.label.text = textField.text
+        self.label.text = textField1.text
     
 
 
 
         // Do any additional setup after loading the view.
-        self.title = "Login"
+        //self.title = "Login"
     
 
 
@@ -88,11 +92,38 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func doLogin (sender: UIButton!) {
+    //func doLogin (sender: Any) {
         
-        print("password for \(textField.text!)is \(textField2.text!)")
+        //print("password for \(textField1.text!)is \(textField2.text!)")
+        
+   // }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        //if textField > 0 && textField2 > 0
+        
+       textField.resignFirstResponder()
+        
+        self.doLogin(sender: textField)
+        
+        return true
+    }
+    
+    func doLogin (sender: Any){
+        
+        let photoVC = PhotoVC()
+        self.present(photoVC, animated: true, completion: nil)
+        //self.performSegue(withIdentifier: "openPhotos", sender: nil)
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print ("ok, let's prepare")
+    }
+    
+
+    
+    
     
 
     /*
