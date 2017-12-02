@@ -19,6 +19,7 @@
 		7BD171551E6792420012FF66 /* Photo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD171531E6792420012FF66 /* Photo+CoreDataClass.swift */; };
 		7BD171561E6792420012FF66 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD171541E6792420012FF66 /* Photo+CoreDataProperties.swift */; };
 		7BD171581E679CE80012FF66 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD171571E679CE80012FF66 /* CoreDataStack.swift */; };
+		E7C75E8E1FCC946600C97918 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C75E8D1FCC946600C97918 /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		7BD171531E6792420012FF66 /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7BD171541E6792420012FF66 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7BD171571E679CE80012FF66 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		E7C75E8D1FCC946600C97918 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		7BD1714E1E6782620012FF66 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E7C75E8D1FCC946600C97918 /* LogInViewController.swift */,
 				0754276B1FCB5A7500E5EA79 /* ProfileViewController.swift */,
 				7BD1714F1E6782750012FF66 /* PhotoVC.swift */,
 			);
@@ -183,6 +186,7 @@
 			files = (
 				7BD171581E679CE80012FF66 /* CoreDataStack.swift in Sources */,
 				7B4DA3571E6B9DB4008CFF8A /* Extensions.swift in Sources */,
+				E7C75E8E1FCC946600C97918 /* LogInViewController.swift in Sources */,
 				7BD171561E6792420012FF66 /* Photo+CoreDataProperties.swift in Sources */,
 				7BD171551E6792420012FF66 /* Photo+CoreDataClass.swift in Sources */,
 				0754276C1FCB5A7500E5EA79 /* ProfileViewController.swift in Sources */,
