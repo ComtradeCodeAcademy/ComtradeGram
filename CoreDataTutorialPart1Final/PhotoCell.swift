@@ -15,7 +15,7 @@ import UIKit
         
         class PhotoCell: UITableViewCell {
     
-    var favoriteBttn : UIButton!
+    var favoriteBttn:UIButton!
     
     
     let photoImageview: UIImageView = {
@@ -26,7 +26,7 @@ import UIKit
         iv.layer.masksToBounds = true
         return iv
     }()
-    
+
     let authorLabel: UILabel = {
         let label = UILabel()
         label.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -38,7 +38,7 @@ import UIKit
         label.lineBreakMode = .byWordWrapping
         return label
     }()
-    
+
     let tagsLabel: UILabel = {
         let label = UILabel()
         label.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -65,21 +65,20 @@ import UIKit
         
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        isUserInteractionEnabled = false
+        isUserInteractionEnabled = true
         
-        
-        self.favoriteBttn = UIButton.init(frame: CGRect.init(x:5, y: 310, width: 50, height: 50))
-        self.favoriteBttn.setTitle("<3", for: UIControlState.normal)
+        self.favoriteBttn = UIButton.init(frame: CGRect.init(x: 5, y: 350, width: 50, height: 50))
+        self.favoriteBttn.setTitle("♡", for: UIControlState.normal)
         self.favoriteBttn.backgroundColor = UIColor.red
+        self.favoriteBttn.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         self.favoriteBttn.layer.cornerRadius = 5
-        
-        
+
         
         addSubview(photoImageview)
         addSubview(authorLabel)
         addSubview(tagsLabel)
         addSubview(dividerLineView)
-        addSubview(favoriteBttn)
+        self.addSubview(self.favoriteBttn)
         
         
         

@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  CoreDataTutorialPart1Final
 //
-//  Created by Miroslav Mirovic on 11/27/17.
+//  Created by Predrag Jevtic on 11/27/17.
 //  Copyright © 2017 James Rochabrun. All rights reserved.
 //
 
@@ -10,58 +10,41 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
-    var textFieldUserName : UITextField!
-    var textFieldPassword : UITextField!
-    var button : UIButton!
-    
-    
- 
-   
-    
+    var usernameTxt: UITextField!
+    var passwordTxt: UITextField!
+    var sendBttn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.title = "Login"
-        self.view.backgroundColor = UIColor.blue
+        view.backgroundColor = .white
         
-        textFieldUserName = UITextField.init()
-        textFieldUserName.delegate = self
-        textFieldUserName.placeholder = "Username"
-        textFieldUserName.backgroundColor = UIColor.lightGray
-        textFieldUserName.frame = CGRect.init(x: 60, y: 130, width: 300, height: 44)
-        textFieldUserName.textAlignment = NSTextAlignment.center
-        self.view.addSubview(textFieldUserName)
+        let btn = UIButton.init(type: .custom)
+        btn.titleLabel?.textAlignment = NSTextAlignment.center
         
-    
-        textFieldPassword = UITextField.init()
-        textFieldPassword.placeholder = "Password"
-        textFieldPassword.isSecureTextEntry = true
-        textFieldPassword.returnKeyType = UIReturnKeyType.send
-        textFieldPassword.backgroundColor = UIColor.lightGray
-        textFieldPassword.frame = CGRect.init(x: 60, y: 180, width: 300, height: 44)
-        textFieldPassword.textAlignment = NSTextAlignment.center
-        self.view.addSubview(textFieldPassword)
+        self.usernameTxt = UITextField.init(frame: CGRect.init(x: 50, y: 120, width: 200, height: 50))
+        self.usernameTxt.placeholder = "Put some name here"
         
+        self.view.addSubview(usernameTxt)
         
-        button = UIButton.init()
-        button.setTitle("Login", for: .normal)
-        self.title = "Login"
-        button.backgroundColor = UIColor.lightGray
-        self.button.addTarget(self, action: #selector(submitLogin(_sende:)),
-                              for:.touchUpInside)
+        self.passwordTxt = UITextField.init(frame: CGRect.init(x: 50, y: 180, width: 200, height: 50))
+        self.passwordTxt.delegate = self
+        self.passwordTxt.placeholder = "Your password please"
+        self.passwordTxt.isSecureTextEntry = true
+        self.passwordTxt.returnKeyType = UIReturnKeyType.send
         
-        button.titleLabel?.textAlignment = NSTextAlignment.center
-        button.frame = CGRect.init(x: 100, y: 250, width: 200, height: 44)
-        view.addSubview(button)
-        
-        button.addTarget(self, action: #selector(doLogin), for: .touchUpInside)
-        
+        self.view.addSubview(self.passwordTxt)
         // Do any additional setup after loading the view.
         
-    }
-    
-    func doLogin(sender: UIButton) {
-        print("Added username and pass")
+        self.sendBttn = UIButton.init(frame: CGRect.init(x: 50, y: 250, width: 300, height: 50))
+        self.sendBttn.setTitle("Send", for: UIControlState.normal)
+        self.sendBttn.backgroundColor = UIColor.lightGray
+        
+        self.sendBttn.addTarget(self, action: #selector(submitLogin(_:)), for:.touchUpInside)
+        
+        self.view.addSubview(self.sendBttn)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,34 +65,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        //1. check if email/username text is empty
-        //2. check if password is empty
-        //3. show alert view controller with message: Missing username/password
-        //4. if form is valid, execute segue to photos table view (posts)
+        // 1. check if email/username text is empty
+        // 2. check if password is empty
+        // 3. show alert view controller with message: Missing username/password
         
+        // 4. if form is valid, execute segue to photos table view (posts)
+
         textField.resignFirstResponder()
         
-        print(textField.text!)
+        self.submitLogin(textField)
         
         return true
-        
     }
-    func submitLogin(_sende: Any){
+    
+    @objc func submitLogin(_ sender: Any){
         let photoVC = PhotoVC()
-        self.present(photoVC, animated: false, completion: nil)
         
-//        self.performSegue(withIdentifier: "openPhotos", sender: nil)
-//        print("sent")
+        self.present(photoVC, animated: true, completion: nil)
     }
-    
-    
-//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//            print("ok, let's prepare")
-//        }
-//
-    
-    }
-    
-
-
-
+}
