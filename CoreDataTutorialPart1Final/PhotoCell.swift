@@ -12,6 +12,39 @@ import UIKit
 
 class PhotoCell: UITableViewCell {
     
+
+    
+    var favoriteButton: UIButton = {
+        let button = UIButton(type: .system)
+        //button.backgroundColor = UIColor.orange
+        button.setTitle("<3", for: .normal)
+        button.setTitleColor(UIColor.black, for: UIControlState.normal)
+        button.frame = CGRect (x: 15, y: 350, width: 40, height: 40)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.layer.cornerRadius = 10
+        button.setImage(UIImage(named: "heart_empty"), for: .normal)
+        button.setImage(UIImage(named: "heart"), for: .selected)
+        //button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "heart"))
+        
+        
+    
+        //button.addTarget(self, action: #selector(loadView), for: .touchUpInside)
+       return button
+        
+        //heartButton = UIButton(type: .system)
+        //heartButton.setImage(UIImage(named: "star"), for: .normal)
+        //heartButton.addTarget(self, action: #selector(toggleStarred), for: .touchUpInside)
+
+        
+    }()
+    
+    
+    
+    
+    
+    
+    
+
     
     let photoImageview: UIImageView = {
         let iv = UIImageView()
@@ -56,12 +89,14 @@ class PhotoCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        isUserInteractionEnabled = false
+        isUserInteractionEnabled = true
+        
         
         addSubview(photoImageview)
         addSubview(authorLabel)
         addSubview(tagsLabel)
         addSubview(dividerLineView)
+        addSubview(favoriteButton)
         
         photoImageview.topAnchor.constraint(equalTo: topAnchor).isActive = true
         photoImageview.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
