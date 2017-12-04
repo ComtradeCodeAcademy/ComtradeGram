@@ -10,7 +10,12 @@ import Foundation
 import UIKit
 
 
-class PhotoCell: UITableViewCell {
+
+
+        
+        class PhotoCell: UITableViewCell {
+    
+    var favoriteBttn : UIButton!
     
     
     let photoImageview: UIImageView = {
@@ -55,13 +60,30 @@ class PhotoCell: UITableViewCell {
 
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        
+        
+        
+        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         isUserInteractionEnabled = false
+        
+        
+        self.favoriteBttn = UIButton.init(frame: CGRect.init(x:5, y: 310, width: 50, height: 50))
+        self.favoriteBttn.setTitle("<3", for: UIControlState.normal)
+        self.favoriteBttn.backgroundColor = UIColor.red
+        self.favoriteBttn.layer.cornerRadius = 5
+        
+        
         
         addSubview(photoImageview)
         addSubview(authorLabel)
         addSubview(tagsLabel)
         addSubview(dividerLineView)
+        addSubview(favoriteBttn)
+        
+        
+        
+        
         
         photoImageview.topAnchor.constraint(equalTo: topAnchor).isActive = true
         photoImageview.leftAnchor.constraint(equalTo: leftAnchor).isActive = true

@@ -14,6 +14,7 @@ import CoreData
 class PhotoVC: UITableViewController {
     
     private let cellID = "cellID"
+    private var favItems = [Photo]()
     
     lazy var fetchedhResultController: NSFetchedResultsController<NSFetchRequestResult> = {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: Photo.self))
@@ -67,10 +68,19 @@ class PhotoVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! PhotoCell
         
+        
+        cell.favoriteBttn.tag = indexPath.row
+        
+        cell.favoriteBttn.addTarget(self, action: #selector(addFavorite(_:)),for : .touchUpInside)
+        
         if let photo = fetchedhResultController.object(at: indexPath) as? Photo {
             cell.setPhotoCellWith(photo: photo)
         }
         return cell
+    }
+    
+    func addFavorite(_ sender: UIButton){
+        print(sender.tag)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,6 +95,15 @@ class PhotoVC: UITableViewController {
         return view.frame.width + 100 //100 = sum of labels height + height of divider line
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    
+    if let photo = fetchedhResultController.object(at: indexPath) as? Photo {
+        self.favItems.append(photo)
+        print(self.favItems)
+        }
+    }
+        
     private func createPhotoEntityFrom(dictionary: [String: AnyObject]) -> NSManagedObject? {
         
         let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
