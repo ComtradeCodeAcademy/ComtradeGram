@@ -2,49 +2,56 @@
 //  LoginViewController.swift
 //  CoreDataTutorialPart1Final
 //
-//  Created by Predrag Jevtic on 11/27/17.
+//  Created by Tijana Gojkovic on 11/27/17.
 //  Copyright © 2017 James Rochabrun. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController {
 
-    var usernameTxt: UITextField!
-    var passwordTxt: UITextField!
-    var sendBttn: UIButton!
+    var button : UIButton!
+    var textFieldUser : UITextField!
+    var textFieldPass : UITextField!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor.red
+        
+        
+        textFieldUser = UITextField.init()
+        textFieldUser.placeholder = "Username"
+        textFieldUser.backgroundColor = UIColor.white
+        textFieldUser.frame =  CGRect.init(x: 60, y: 130, width: 300, height: 44)
+        textFieldUser.borderStyle = .roundedRect
+        self.view.addSubview(textFieldUser)
+        textFieldUser.textAlignment = NSTextAlignment.center
+        
+        textFieldPass = UITextField.init()
+        textFieldPass.placeholder = "Password"
+        textFieldPass.backgroundColor = UIColor.white
+        textFieldPass.frame = CGRect.init(x: 60, y: 180, width: 300, height: 44)
+        textFieldPass.borderStyle = .roundedRect
+        view.addSubview(textFieldPass)
+        textFieldPass.textAlignment = NSTextAlignment.center
+        textFieldPass.isSecureTextEntry = true
+        
+        button = UIButton(type: .system)
+        button.frame = CGRect.init(x: 100, y: 250, width: 200, height: 44)
+        button.setTitle("Login", for: .normal)
+        button.backgroundColor = UIColor.white
         self.title = "Login"
-        view.backgroundColor = .white
+        button.titleLabel?.textAlignment = NSTextAlignment.center
+        self.view.addSubview(button)
+        button.layer.cornerRadius = 5.0
+        button.addTarget(self, action: #selector(doLogin), for: .touchUpInside)
         
-        let btn = UIButton.init(type: .custom)
-        btn.titleLabel?.textAlignment = NSTextAlignment.center
-        
-        self.usernameTxt = UITextField.init(frame: CGRect.init(x: 50, y: 120, width: 200, height: 50))
-        self.usernameTxt.placeholder = "Put some name here"
-        
-        self.view.addSubview(usernameTxt)
-        
-        self.passwordTxt = UITextField.init(frame: CGRect.init(x: 50, y: 180, width: 200, height: 50))
-        self.passwordTxt.delegate = self
-        self.passwordTxt.placeholder = "Your password please"
-        self.passwordTxt.isSecureTextEntry = true
-        self.passwordTxt.returnKeyType = UIReturnKeyType.send
-        
-        self.view.addSubview(self.passwordTxt)
         // Do any additional setup after loading the view.
-        
-        self.sendBttn = UIButton.init(frame: CGRect.init(x: 50, y: 250, width: 300, height: 50))
-        self.sendBttn.setTitle("Send", for: UIControlState.normal)
-        self.sendBttn.backgroundColor = UIColor.lightGray
-        
-        self.sendBttn.addTarget(self, action: #selector(submitLogin(_:)), for:.touchUpInside)
-        
-        self.view.addSubview(self.sendBttn)
-        
+    }
+    
+    func doLogin(sender: UIButton!) {
+        print("Password for \(textFieldUser.text!) is \(textFieldPass.text!)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,24 +70,4 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        // 1. check if email/username text is empty
-        // 2. check if password is empty
-        // 3. show alert view controller with message: Missing username/password
-        
-        // 4. if form is valid, execute segue to photos table view (posts)
-
-        textField.resignFirstResponder()
-        
-        self.submitLogin(textField)
-        
-        return true
-    }
-    
-    @objc func submitLogin(_ sender: Any){
-        let photoVC = PhotoVC()
-        
-        self.present(photoVC, animated: true, completion: nil)
-    }
 }

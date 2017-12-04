@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0754276C1FCB5A7500E5EA79 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0754276B1FCB5A7500E5EA79 /* ProfileViewController.swift */; };
-		077D19CC1FCC958000B9280E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D19CB1FCC958000B9280E /* LoginViewController.swift */; };
+		6986AD4E1FCC85CC0043AB50 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6986AD4D1FCC85CC0043AB50 /* LoginViewController.swift */; };
 		7B09F2421E68C8F700C8774B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09F2411E68C8F700C8774B /* APIService.swift */; };
 		7B4DA3571E6B9DB4008CFF8A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4DA3561E6B9DB4008CFF8A /* Extensions.swift */; };
 		7BD171381E6782130012FF66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD171371E6782130012FF66 /* AppDelegate.swift */; };
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		0754276B1FCB5A7500E5EA79 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		077D19CB1FCC958000B9280E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6986AD4D1FCC85CC0043AB50 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7B09F2411E68C8F700C8774B /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		7B4DA3561E6B9DB4008CFF8A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7BD171341E6782130012FF66 /* CoreDataTutorialPart1Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTutorialPart1Final.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,7 +107,7 @@
 			children = (
 				0754276B1FCB5A7500E5EA79 /* ProfileViewController.swift */,
 				7BD1714F1E6782750012FF66 /* PhotoVC.swift */,
-				077D19CB1FCC958000B9280E /* LoginViewController.swift */,
+				6986AD4D1FCC85CC0043AB50 /* LoginViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 				7BD171401E6782130012FF66 /* CoreDataTutorialPart1Final.xcdatamodeld in Sources */,
 				7B09F2421E68C8F700C8774B /* APIService.swift in Sources */,
 				7BD171501E6782750012FF66 /* PhotoVC.swift in Sources */,
-				077D19CC1FCC958000B9280E /* LoginViewController.swift in Sources */,
+				6986AD4E1FCC85CC0043AB50 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
