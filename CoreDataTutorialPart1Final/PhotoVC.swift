@@ -72,12 +72,12 @@ class PhotoVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! PhotoCell
         
         cell.favoriteBttn.tag = indexPath.row
-        cell.favoriteBttn.setTitle("♡", for: UIControlState.normal)
+        cell.favoriteBttn.setTitle("💔", for: .normal)
         
         if let photo = fetchedhResultController.object(at: indexPath) as? Photo {
             cell.setPhotoCellWith(photo: photo)
             if(self.favItems.contains(indexPath.row)){
-                cell.favoriteBttn.setTitle("♥︎", for: .normal) 
+                cell.favoriteBttn.setTitle("❤️", for: .normal)
             }
         }
         
@@ -88,7 +88,7 @@ class PhotoVC: UITableViewController {
     }
     
     @objc func addFavorite(_ sender: UIButton){
-        sender.setTitle("♥︎", for: .normal)
+        sender.setTitle("❤️", for: .normal)
         if let _ = fetchedhResultController.fetchedObjects![sender.tag] as? Photo {
             if(self.favItems.contains(sender.tag)){
                 self.favItems = self.favItems.filter{ $0 != sender.tag }
@@ -113,7 +113,7 @@ class PhotoVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         if let photo = fetchedhResultController.object(at: indexPath) as? Photo{
-            self.favItems.append(photo)
+            self.favItems.append(indexPath.row)
             print(self.favItems)
         
             
