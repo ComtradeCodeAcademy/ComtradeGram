@@ -27,8 +27,6 @@ class PhotoCell: UITableViewCell {
         button.setImage(UIImage(named: "heart"), for: .selected)
         
         
-        //button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "heart"))
-        
         
     
         //button.addTarget(self, action: #selector(loadView), for: .touchUpInside)
@@ -73,7 +71,7 @@ class PhotoCell: UITableViewCell {
         iv.layer.masksToBounds = true
         return iv
     }()
-
+    
     let authorLabel: UILabel = {
         let label = UILabel()
         label.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -85,7 +83,7 @@ class PhotoCell: UITableViewCell {
         label.lineBreakMode = .byWordWrapping
         return label
     }()
-
+    
     let tagsLabel: UILabel = {
         let label = UILabel()
         label.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -111,20 +109,20 @@ class PhotoCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         isUserInteractionEnabled = true
         
-        self.favoriteBttn = UIButton.init(frame: CGRect.init(x: 5, y: 370, width: 50, height: 50))
+        self.favoriteBttn = UIButton.init(frame: CGRect.init(x: 5, y: 330, width: 50, height: 50))
         self.favoriteBttn.setTitle("💔", for: UIControlState.normal)
         //self.favoriteBttn.backgroundColor = UIColor.red
         self.favoriteBttn.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         self.favoriteBttn.layer.cornerRadius = 5
         
         
-        self.commentBttn = UIButton.init(frame: CGRect.init(x: 70, y: 370, width: 50, height: 50))
+        self.commentBttn = UIButton.init(frame: CGRect.init(x: 70, y: 330, width: 50, height: 50))
         self.commentBttn.setTitle("💬", for: UIControlState.normal)
         //self.commentBttn.backgroundColor = UIColor.red
         self.commentBttn.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         self.commentBttn.layer.cornerRadius = 5
-
-
+        
+        
         
         addSubview(photoImageview)
         addSubview(authorLabel)
