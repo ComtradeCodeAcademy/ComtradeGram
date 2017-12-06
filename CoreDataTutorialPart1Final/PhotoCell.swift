@@ -57,7 +57,8 @@ import UIKit
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
-
+    
+    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         

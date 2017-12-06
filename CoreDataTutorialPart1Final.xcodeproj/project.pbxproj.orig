@@ -197,7 +197,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
+				D1A29D341FCC980800D00DC8 /* LoginViewController.swift in Sources */,
+=======
 				07D882FB1FD5D74D005A5E58 /* CommentCell.swift in Sources */,
+>>>>>>> 9b1b717d40780f5b37e66d2f2699e83225c3185c
 				7BD171581E679CE80012FF66 /* CoreDataStack.swift in Sources */,
 				7B4DA3571E6B9DB4008CFF8A /* Extensions.swift in Sources */,
 				07D882FD1FD5D89A005A5E58 /* Comment.swift in Sources */,
