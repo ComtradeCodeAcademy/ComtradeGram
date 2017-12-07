@@ -30,9 +30,10 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
                 width: self.view.frame.size.width,
                 height: self.view.frame.size.height - 110))
         
-        //        self.view.addSubview(self.tableView!)
-        tableView!.register(CommentCell.self, forCellReuseIdentifier: "commentCell")
+        self.view.addSubview(self.tableView!)
+        tableView?.register(CommentCell.self, forCellReuseIdentifier: "commentsCell")
         self.tableView?.delegate = self
+        self.tableView?.dataSource = self
 
         // Do any additional setup after loading the view.
         self.tableView?.reloadData()
@@ -77,7 +78,7 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     @objc func storeComment(_ sender: AnyObject){
         let commentText = self.commentTxt?.text
-// add new comment into list of comment
+        // add new comment into list of comment
         self.commentsList.append(Comment.init(text: commentText!, date: Date()))
 
         print(commentText!)
