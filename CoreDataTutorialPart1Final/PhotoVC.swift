@@ -128,7 +128,7 @@ class PhotoVC: UITableViewController {
         
     
     if let photo = fetchedhResultController.object(at: indexPath) as? Photo {
-        self.favItems.append(photo)
+        self.favItems.append(indexPath.row)
         print(self.favItems)
         }
     }
