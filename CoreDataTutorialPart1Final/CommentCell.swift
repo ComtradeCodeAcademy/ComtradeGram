@@ -11,19 +11,24 @@ import UIKit
 class CommentCell: UITableViewCell {
     
     var commentText:UILabel = {
-        let lbl = UILabel()
-        //        init(frame: CGRect.init(x: 5, y: 5, width: self.frame.size.width - 60, height: self.frame.size.height - 10))
-        //
+        let lbl = UILabel.init()
+        //(frame: CGRect.init(x: 5, y: 5, width: size.width - 60, height: self.frame.size.height - 10))
         lbl.backgroundColor = UIColor.red
         return lbl
     }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        isUserInteractionEnabled = true
         // Initialization code
         self.addSubview(commentText)
+        commentText.frame = CGRect.init(x: 10, y: 5, width: self.frame.size.width, height: self.frame.size.height - 10)
     }
-    
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
