@@ -107,7 +107,7 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
 
         cell.commentTextLbl.text = comment?.text
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd mm yyyy"
+        dateFormatter.dateFormat = "dd.MM.yyyy"
         if let d = dateFormatter.string(from: (comment?.date)!) as? String {
             cell.commentDateLbl.text = d
         }
