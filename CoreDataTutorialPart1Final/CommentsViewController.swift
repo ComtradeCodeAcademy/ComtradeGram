@@ -21,8 +21,6 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lightGray
 
-        self.commentsList.append(Comment.init(text: "Here is my comment", date: Date()))
-
         self.tableView = UITableView.init(frame:
             CGRect.init(
                 x: 0,
@@ -81,8 +79,7 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         // add new comment into list of comment
         self.commentsList.append(Comment.init(text: commentText!, date: Date()))
 
-        print(commentText!)
-        print(self.commentsList)
+        self.tableView?.reloadData()
 
         self.commentTxt?.text = ""
         self.commentTxt?.resignFirstResponder()
@@ -106,10 +103,14 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentsCell", for: indexPath) as! CommentCell
 
-        let comment = self.commentsList[indexPath.row]
+        let comment = self.commentsList[indexPath.row] as? Comment
 
-        print(comment)
-
+        cell.commentTextLbl.text = comment?.text
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd mm yyyy"
+        if let d = dateFormatter.string(from: (comment?.date)!) as? String {
+            cell.commentDateLbl.text = d
+        }
         return cell
     }
 

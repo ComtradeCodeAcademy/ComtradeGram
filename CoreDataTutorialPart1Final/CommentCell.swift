@@ -9,20 +9,34 @@
 import UIKit
 
 class CommentCell: UITableViewCell {
-    
-    var commentText:UILabel = {
+
+    var commentTextLbl:UILabel = {
         let lbl = UILabel.init()
-        //(frame: CGRect.init(x: 5, y: 5, width: size.width - 60, height: self.frame.size.height - 10))
-        lbl.backgroundColor = UIColor.red
+
+        return lbl
+    }()
+
+    var commentDateLbl:UILabel = {
+        let lbl = UILabel.init()
+        lbl.font = UIFont.systemFont(ofSize: 14)
         return lbl
     }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        let commentWidth = self.frame.size.width * 0.8 - 10
+        let dateWidth = self.frame.size.width * 0.3 + 20
+        let dateInset = self.frame.size.width - dateWidth
+        let labelHeight = self.frame.size.height - 10
+
         isUserInteractionEnabled = true
         // Initialization code
-        self.addSubview(commentText)
-        commentText.frame = CGRect.init(x: 10, y: 5, width: self.frame.size.width, height: self.frame.size.height - 10)
+        self.addSubview(commentTextLbl)
+        commentTextLbl.frame = CGRect.init(x: 10, y: 5, width: commentWidth, height: labelHeight)
+
+        commentDateLbl.frame =  CGRect.init(x: dateInset, y: 5, width: dateWidth, height: labelHeight)
+        self.addSubview(commentDateLbl)
     }
 
     required init?(coder aDecoder: NSCoder) {
