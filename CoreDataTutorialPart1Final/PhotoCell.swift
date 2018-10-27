@@ -10,9 +10,13 @@ import Foundation
 import UIKit
 
 
-class PhotoCell: UITableViewCell {
+
+
+        
+        class PhotoCell: UITableViewCell {
     
     var favoriteBttn:UIButton!
+    
     
     let photoImageview: UIImageView = {
         let iv = UIImageView()
@@ -57,6 +61,10 @@ class PhotoCell: UITableViewCell {
     
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        
+        
+        
+        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         isUserInteractionEnabled = true
         
@@ -72,6 +80,10 @@ class PhotoCell: UITableViewCell {
         addSubview(tagsLabel)
         addSubview(dividerLineView)
         self.addSubview(self.favoriteBttn)
+        
+        
+        
+        
         
         photoImageview.topAnchor.constraint(equalTo: topAnchor).isActive = true
         photoImageview.leftAnchor.constraint(equalTo: leftAnchor).isActive = true

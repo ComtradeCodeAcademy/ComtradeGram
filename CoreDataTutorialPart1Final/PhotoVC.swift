@@ -124,6 +124,15 @@ class PhotoVC: UITableViewController {
         return view.frame.width + 100 //100 = sum of labels height + height of divider line
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    
+    if let photo = fetchedhResultController.object(at: indexPath) as? Photo {
+        self.favItems.append(indexPath.row)
+        print(self.favItems)
+        }
+    }
+        
     private func createPhotoEntityFrom(dictionary: [String: AnyObject]) -> NSManagedObject? {
         
         let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
