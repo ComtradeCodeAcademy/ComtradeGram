@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate  {
 
     var window: UIWindow?
     
@@ -41,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let item3 = UITabBarItem(title: "Add", image: nil, tag: 2)
         let item4 = UITabBarItem(title: "Login", image: nil, tag: 3)
         let item5 = UITabBarItem(title: "Profile", image: nil, tag: 4)
+        let item6 = UITabBarItem(title: "Login", image: nil, tag: 5)
         
         self.tabBarController.tabBarItem = item1
         self.tabBarController.tabBarItem = item2
@@ -50,8 +51,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = self.tabBarController
         
+        
+        
         return true
     }
+        
+        
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
